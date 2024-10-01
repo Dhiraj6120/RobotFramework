@@ -1,315 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2024-10-01T14:42:13.792288" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2024-10-01T16:54:20.094809" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFramework" source="/Users/dhiraj/PycharmProjects/RobotFramework">
 <suite id="s1-s1" name="Tests" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests">
-<suite id="s1-s1-s1" name="verifyTheCountryDropdown" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests/verifyTheCountryDropdown.robot">
-<test id="s1-s1-s1-t1" name="Verify user is able to add product to Cart" line="13">
+<suite id="s1-s1-s1" name="verifyChildWindow" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests/verifyChildWindow.robot">
+<test id="s1-s1-s1-t1" name="Verify the New Window in Browser" line="11">
 <kw name="Open Browser and Go to Website" owner="common" type="SETUP">
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:13.959928" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2024-10-01T16:54:20.374816" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>/Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-10-01T14:42:13.959765" elapsed="1.404672"/>
+<status status="PASS" start="2024-10-01T16:54:20.374649" elapsed="1.479791"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:15.365436" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<msg time="2024-10-01T16:54:21.855826" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
 <arg>${DemoWebshopUrl}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-10-01T14:42:15.365047" elapsed="4.077079"/>
+<status status="PASS" start="2024-10-01T16:54:21.855260" elapsed="6.309383"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:42:13.959123" elapsed="5.483208"/>
+<status status="PASS" start="2024-10-01T16:54:20.374026" elapsed="7.790873"/>
 </kw>
-<kw name="Generate Random userData" owner="testData">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.444638" level="INFO">${rand_firstname} = rkaji</msg>
-<var>${rand_firstname}</var>
-<arg>''.join(random.choices(string.ascii_letters+string.digits, k=5))</arg>
-<arg>random, string</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.443817" elapsed="0.000892"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.445566" level="INFO">${new_firstname} = rkaji</msg>
-<arg>${new_firstname}</arg>
-<arg>${rand_firstname}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.444974" elapsed="0.000703"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.446331" level="INFO">${rand_lastname} = F17ER</msg>
-<var>${rand_lastname}</var>
-<arg>''.join(random.choices(string.ascii_letters+string.digits, k=5))</arg>
-<arg>random, string</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.445914" elapsed="0.000465"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.446877" level="INFO">${new_lastname} = F17ER</msg>
-<arg>${new_lastname}</arg>
-<arg>${rand_lastname}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.446559" elapsed="0.000380"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.447455" level="INFO">${randPassword} = J@~X%&gt;/W</msg>
-<var>${randPassword}</var>
-<arg>''.join(random.choices(string.ascii_letters+string.digits+string.punctuation, k=8))</arg>
-<arg>random, string</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.447094" elapsed="0.000401"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.447991" level="INFO">${new_password} = J@~X%&gt;/W</msg>
-<arg>${new_password}</arg>
-<arg>${randPassword}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.447666" elapsed="0.000408"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.448562" level="INFO">${new_username} = user_rkaji</msg>
-<arg>${new_username}</arg>
-<arg>${user_prefix}${new_firstname}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.448244" elapsed="0.000379"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.449058" level="INFO">${new_Email} = user_rkaji@yopmail.com</msg>
-<arg>${new_Email}</arg>
-<arg>${new_username}${mail_Provider}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.448775" elapsed="0.000340"/>
-</kw>
-<status status="PASS" start="2024-10-01T14:42:19.443063" elapsed="0.006155"/>
-</kw>
-<kw name="Tap on Search Button without entering the text">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.450394" level="INFO">Clicking element 'css:.search-box-button'.</msg>
-<arg>css:.search-box-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.449894" elapsed="0.087234"/>
-</kw>
-<kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.537714" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.537377" elapsed="0.004840"/>
-</kw>
-<status status="PASS" start="2024-10-01T14:42:19.449571" elapsed="0.092850"/>
-</kw>
-<kw name="Add Product to cart">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.product-title a</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.543730" elapsed="0.029997"/>
-</kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.581514" level="INFO">${products_WebElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="b2b0abdbfffbb279029896204098dd71", element="f.A5A92ED0D2A82C349E15D084281C3B7F.d.98DEDA0A44A88385F860DC2094BCF832.e.22")&gt;, &lt;selenium.webdriv...</msg>
-<var>${products_WebElements}</var>
-<arg>css:.product-title a</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.573959" elapsed="0.007607"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.581943" level="INFO">${productIndex} = 1</msg>
-<var>${productIndex}</var>
-<arg>1</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.581758" elapsed="0.000218"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.595052" level="INFO">${product_text} = $25 Virtual Gift Card</msg>
-<var>${product_text}</var>
-<arg>${product_WebElement}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.582496" elapsed="0.012603"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.595464" level="INFO">Found product: $25 Virtual Gift Card</msg>
-<arg>Found product: ${product_text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.595281" elapsed="0.000238"/>
-</kw>
-<kw name="Exit For Loop If" owner="BuiltIn">
-<arg>'${productName}' == '${product_text}'</arg>
-<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.595647" elapsed="0.000565"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.596595" level="INFO">${productIndex} = 2</msg>
-<var>${productIndex}</var>
-<arg>${productIndex} + 1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.596357" elapsed="0.000273"/>
-</kw>
-<var name="${product_WebElement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="b2b0abdbfffbb279029896204098dd71", element="f.A5A92ED0D2A82C349E15D084281C3B7F.d.98DEDA0A44A88385F860DC2094BCF832.e.22")&gt;</var>
-<status status="PASS" start="2024-10-01T14:42:19.582353" elapsed="0.014335"/>
-</iter>
-<iter>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.604242" level="INFO">${product_text} = 14.1-inch Laptop</msg>
-<var>${product_text}</var>
-<arg>${product_WebElement}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.596971" elapsed="0.007315"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.604642" level="INFO">Found product: 14.1-inch Laptop</msg>
-<arg>Found product: ${product_text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.604461" elapsed="0.000235"/>
-</kw>
-<kw name="Exit For Loop If" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.605091" level="INFO">Exiting for loop altogether.</msg>
-<arg>'${productName}' == '${product_text}'</arg>
-<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.604818" elapsed="0.000390"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<var>${productIndex}</var>
-<arg>${productIndex} + 1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:19.605346" elapsed="0.000034"/>
-</kw>
-<var name="${product_WebElement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="b2b0abdbfffbb279029896204098dd71", element="f.A5A92ED0D2A82C349E15D084281C3B7F.d.98DEDA0A44A88385F860DC2094BCF832.e.5")&gt;</var>
-<status status="PASS" start="2024-10-01T14:42:19.596854" elapsed="0.008579"/>
-</iter>
-<var>${product_WebElement}</var>
-<value>@{products_WebElements}</value>
-<status status="PASS" start="2024-10-01T14:42:19.582089" elapsed="0.023415"/>
-</for>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:42:19.605789" level="INFO">Product index is: 2</msg>
-<arg>Product index is: ${productIndex}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.605642" elapsed="0.000198"/>
+<kw name="Verify and Tap the Youtube Link at button of the Page">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[text()='YouTube']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-10-01T16:54:28.165952" elapsed="0.289233"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.606176" level="INFO">Clicking element 'xpath:(//*[@value='Add to cart'])[2]'.</msg>
-<arg>xpath:(//*[@value='Add to cart'])[${productIndex}]</arg>
+<msg time="2024-10-01T16:54:28.455625" level="INFO">Clicking element '//a[text()='YouTube']'.</msg>
+<arg>//a[text()='YouTube']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.605967" elapsed="0.045190"/>
+<status status="PASS" start="2024-10-01T16:54:28.455405" elapsed="0.066919"/>
 </kw>
-<arg>14.1-inch Laptop</arg>
-<status status="PASS" start="2024-10-01T14:42:19.543044" elapsed="0.108235"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-01T16:54:33.523560" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-01T16:54:28.522648" elapsed="5.001069"/>
 </kw>
-<kw name="Tap on Shopping Cart link">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:19.652004" level="INFO">Clicking element 'xpath://span[text()='Shopping cart']'.</msg>
-<arg>xpath://span[text()='Shopping cart']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-01T14:42:19.651802" elapsed="1.032773"/>
+<status status="PASS" start="2024-10-01T16:54:28.165517" elapsed="5.358399"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:42:19.651517" elapsed="1.033257"/>
+<kw name="Verify that user is switch to child window">
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-10-01T16:54:33.524622" elapsed="0.014474"/>
 </kw>
-<kw name="Select the Country from Dropdown">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.country-input</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-01T14:42:20.685756" elapsed="0.020269"/>
+<status status="PASS" start="2024-10-01T16:54:33.524226" elapsed="0.015078"/>
 </kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:20.706487" level="INFO">Selecting options from selection list 'css:.country-input' by value 41.</msg>
-<arg>css:.country-input</arg>
-<arg>41</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-10-01T14:42:20.706254" elapsed="0.067340"/>
-</kw>
-<status status="PASS" start="2024-10-01T14:42:20.685177" elapsed="0.088539"/>
-</kw>
-<kw name="Validate the Feature products on Home Page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-10-01T14:42:26.335711" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-10-01T14:42:26.335899" level="FAIL">Element 'css:.product-title a' not visible after 5 seconds.</msg>
-<arg>css:.product-title a</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-10-01T14:42:20.774285" elapsed="5.562940">Element 'css:.product-title a' not visible after 5 seconds.</status>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<var>${feature_ExpectedProducts}</var>
-<arg>$25 Virtual Gift Card</arg>
-<arg>14.1-inch Laptop</arg>
-<arg>Build your own cheap computer</arg>
-<arg>Build your own computer</arg>
-<arg>Build your own expensive computer</arg>
-<arg>Simple Computer</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.337413" elapsed="0.000038"/>
-</kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<var>${products_WebElements}</var>
-<arg>css:.product-title a</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.337588" elapsed="0.000032"/>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<var>${feature_ActualProducts}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.337728" elapsed="0.000030"/>
-</kw>
-<for flavor="IN">
-<iter>
+<kw name="Get Name of youtube channel">
 <kw name="Get Text" owner="SeleniumLibrary">
-<var>${product_text}</var>
-<arg>${product_WebElement}</arg>
+<msg time="2024-10-01T16:54:33.583230" level="INFO">${newWindowText} = nopCommerce</msg>
+<var>${newWindowText}</var>
+<arg>//span[text()='nopCommerce']</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.338029" elapsed="0.000032"/>
-</kw>
-<kw name="Append To List" owner="Collections">
-<arg>${feature_ActualProducts}</arg>
-<arg>${product_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.338173" elapsed="0.000030"/>
+<status status="PASS" start="2024-10-01T16:54:33.540157" elapsed="0.043117"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<arg>${product_text}</arg>
+<msg time="2024-10-01T16:54:33.583628" level="INFO">nopCommerce</msg>
+<arg>${newWindowText}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.338311" elapsed="0.000029"/>
+<status status="PASS" start="2024-10-01T16:54:33.583450" elapsed="0.000231"/>
 </kw>
-<var name="${product_WebElement}"/>
-<status status="NOT RUN" start="2024-10-01T14:42:26.337927" elapsed="0.000457"/>
-</iter>
-<var>${product_WebElement}</var>
-<value>@{products_WebElements}</value>
-<status status="NOT RUN" start="2024-10-01T14:42:26.337824" elapsed="0.000607"/>
-</for>
-<kw name="Lists Should Be Equal" owner="Collections">
-<arg>${feature_ActualProducts}</arg>
-<arg>${feature_ExpectedProducts}</arg>
-<arg>ignore_order=True</arg>
-<doc>Fails if given lists are unequal.</doc>
-<status status="NOT RUN" start="2024-10-01T14:42:26.338564" elapsed="0.000032"/>
-</kw>
-<status status="FAIL" start="2024-10-01T14:42:20.774007" elapsed="5.564730">Element 'css:.product-title a' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-10-01T16:54:33.539665" elapsed="0.044102"/>
 </kw>
 <kw name="Close Existing Browser" owner="common" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-01T14:42:26.339354" elapsed="0.147650"/>
+<status status="PASS" start="2024-10-01T16:54:33.584353" elapsed="0.304588"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:42:26.339075" elapsed="0.148036"/>
+<status status="PASS" start="2024-10-01T16:54:33.584076" elapsed="0.304977"/>
 </kw>
-<status status="FAIL" start="2024-10-01T14:42:13.958490" elapsed="12.528725">Element 'css:.product-title a' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-10-01T16:54:20.373406" elapsed="13.515752"/>
 </test>
-<doc>This test is to verify the dropdown box</doc>
-<status status="FAIL" start="2024-10-01T14:42:13.821349" elapsed="12.666387"/>
+<doc>Thia Test Case is to validate the new window in Browser</doc>
+<status status="PASS" start="2024-10-01T16:54:20.136684" elapsed="13.752975"/>
 </suite>
-<status status="FAIL" start="2024-10-01T14:42:13.820495" elapsed="12.667839"/>
+<status status="PASS" start="2024-10-01T16:54:20.135855" elapsed="13.754435"/>
 </suite>
-<status status="FAIL" start="2024-10-01T14:42:13.793688" elapsed="12.695034"/>
+<status status="PASS" start="2024-10-01T16:54:20.096419" elapsed="13.794258"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="RobotFramework">RobotFramework</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotFramework.Tests</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="verifyTheCountryDropdown">RobotFramework.Tests.verifyTheCountryDropdown</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="RobotFramework">RobotFramework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">RobotFramework.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="verifyChildWindow">RobotFramework.Tests.verifyChildWindow</stat>
 </suite>
 </statistics>
 <errors>
