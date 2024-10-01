@@ -9,6 +9,7 @@ ${lastNameTextbox}    id:LastName
 ${emailTextbox}    id:Email
 ${passwordTextbox}    id:Password
 ${confirmPasswordTextbox}    id:ConfirmPassword
-${registerFormRegisterButton}    xpath://*[@value="Register"]
+${registerFormRegisterButton}    id:register-button
 ${registrationCompletionText}    xpath://*[@class="result"]
 ${ExpectedFirstNameError}    First name is required.
+${ContinueButtonAfterRegister}    css:.register-continue-button

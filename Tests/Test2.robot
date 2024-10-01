@@ -17,10 +17,9 @@ Test Teardown    Close Existing Browser
 
 Validate Feature products displayed on Home Screen
     Generate Random userData
-#    Tap on register button
-#    Fill the Registration Form         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
-#    Click on continue button
-    Validate the Feature text on Home Page
+    Tap on register button
+    Fill the Registration Form         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
+    Validate the Feature products on Home Page
 
 *** Keywords ***
 
@@ -39,6 +38,8 @@ Fill the Registration Form
     Input Password                     ${passwordTextbox}           ${password}
     Input Password                     ${confirmPasswordTextbox}    ${password}
     Click Element                      ${registerFormRegisterButton}
+    Wait Until Element Is Visible      ${ContinueButtonAfterRegister}
+    Click Element                      ${ContinueButtonAfterRegister}
 
 Verify user is successfully register to Website
     Wait Until Element Is Visible    ${registrationCompletionText}
@@ -50,14 +51,12 @@ Validate the Error for firstname
     ${ResultText}=    Get Text        xpath://span[@for = "FirstName"]
     Should Be Equal As Strings        ${ResultText}    ${ExpectedFirstNameError}
 
-Click on continue button
-    Click Button    ${registeredContinueButton}
 
-
-Validate the Feature text on Home Page
-    ${products_WebElements}=    Get Webelements    css:.product-title
+Validate the Feature products on Home Page
+    Wait Until Element Is Visible    css:.product-title a
+    ${products_WebElements}=    Get Webelements    css:.product-title a
     FOR    ${product_WebElement}    IN    @{products_WebElements}
         ${product_text}=    Get Text    ${product_WebElement}
-        Log    ${product_text}    # Log the text of each product title
+        Log    ${product_text}
     END
 
