@@ -34,10 +34,6 @@ Validate Successfully user Login
 
 *** Keywords ***
 
-Tap on register button
-    Wait Until Element Is Visible      ${registerLink}
-    Click Element                      ${registerLink}
-
 Fill the login form with wrong creds
     Wait Until Element Is Visible     id:gender-male
     Wait Until Element Is Enabled      ${maleGenderCheckbox}
