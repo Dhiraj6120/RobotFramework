@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2024-10-01T12:34:28.932386" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework" source="/Users/dhiraj/PycharmProjects/RobotFramework">
+<suite id="s1-s1" name="Tests" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests">
+<suite id="s1-s1-s1" name="verifyRegistrationPageTest" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests/verifyRegistrationPageTest.robot">
+<test id="s1-s1-s1-t1" name="Validate UnSuccessful Login" line="22">
+<kw name="Open Browser and Go to Website" owner="common" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:29.105557" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>/Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-10-01T12:34:29.105395" elapsed="1.263322"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:30.371115" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<arg>${DemoWebshopUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-01T12:34:30.370097" elapsed="8.302196"/>
+</kw>
+<status status="PASS" start="2024-10-01T12:34:29.104809" elapsed="9.567652"/>
+</kw>
+<kw name="open the browser with Webshop Website">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:38.673441" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>/Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-10-01T12:34:38.673245" elapsed="1.459049"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:40.133561" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<arg>https://demowebshop.tricentis.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-01T12:34:40.133063" elapsed="8.407146"/>
+</kw>
+<status status="PASS" start="2024-10-01T12:34:38.672832" elapsed="9.867621"/>
+</kw>
+<kw name="Tap on register button">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${registerLink}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T12:34:48.541759" elapsed="0.028632"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:48.570990" level="INFO">Clicking element 'class:ico-register'.</msg>
+<arg>${registerLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:48.570659" elapsed="1.710845"/>
+</kw>
+<status status="PASS" start="2024-10-01T12:34:48.541071" elapsed="1.740632"/>
+</kw>
+<kw name="Fill the login form with wrong creds">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:gender-male</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.282501" elapsed="0.022889"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${maleGenderCheckbox}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.305731" elapsed="0.029816"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.336255" level="INFO">Clicking element 'id:gender-male'.</msg>
+<arg>${maleGenderCheckbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.335844" elapsed="0.053961"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.390364" level="INFO">Typing text '"lNasadsadme"' into text field 'id:LastName'.</msg>
+<arg>${lastNameTextbox}</arg>
+<arg>"lNasadsadme"</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.390078" elapsed="0.216289"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.606800" level="INFO">Typing text '"fn12322@gmail.com"' into text field 'id:Email'.</msg>
+<arg>${emailTextbox}</arg>
+<arg>"fn12322@gmail.com"</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.606575" elapsed="0.075504"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.682528" level="INFO">Typing password into text field 'id:Password'.</msg>
+<msg time="2024-10-01T12:34:50.712793" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordTextbox}</arg>
+<arg>"flnasdaame@45"</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.682278" elapsed="0.085825"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.768526" level="INFO">Typing password into text field 'id:ConfirmPassword'.</msg>
+<msg time="2024-10-01T12:34:50.798660" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${confirmPasswordTextbox}</arg>
+<arg>"flnasdaame@45"</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.768296" elapsed="0.069609"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.838250" level="INFO">Clicking element 'xpath://*[@value="Register"]'.</msg>
+<arg>${registerFormRegisterButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.838064" elapsed="0.068343"/>
+</kw>
+<status status="PASS" start="2024-10-01T12:34:50.282157" elapsed="0.624397"/>
+</kw>
+<kw name="Validate the Error for firstname">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath://span[@for = "FirstName"]</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.907363" elapsed="0.032546"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-01T12:34:50.968069" level="INFO">${ResultText} = First name is required.</msg>
+<var>${ResultText}</var>
+<arg>xpath://span[@for = "FirstName"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.940248" elapsed="0.027894"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-01T12:34:50.969043" level="FAIL">First name is required. != First nme is required.</msg>
+<arg>${ResultText}</arg>
+<arg>${ExpectedFirstNameError}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="FAIL" start="2024-10-01T12:34:50.968471" elapsed="0.000823">First name is required. != First nme is required.</status>
+</kw>
+<status status="FAIL" start="2024-10-01T12:34:50.906936" elapsed="0.062623">First name is required. != First nme is required.</status>
+</kw>
+<kw name="Close Existing Browser" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-01T12:34:50.970372" elapsed="0.198107"/>
+</kw>
+<status status="PASS" start="2024-10-01T12:34:50.970036" elapsed="0.198628"/>
+</kw>
+<status status="FAIL" start="2024-10-01T12:34:29.104225" elapsed="22.064599">First name is required. != First nme is required.</status>
+</test>
+<doc>To Validate the login form</doc>
+<status status="FAIL" start="2024-10-01T12:34:28.964404" elapsed="22.205631"/>
+</suite>
+<status status="FAIL" start="2024-10-01T12:34:28.963382" elapsed="22.207834"/>
+</suite>
+<status status="FAIL" start="2024-10-01T12:34:28.933729" elapsed="22.238061"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFramework">RobotFramework</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotFramework.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="verifyRegistrationPageTest">RobotFramework.Tests.verifyRegistrationPageTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
