@@ -3,7 +3,6 @@ Documentation    To Validate the login form
 Library    SeleniumLibrary
 Library    Collections
 Resource    common.robot
-Resource    verifyRegistrationPageTest.robot
 Resource    testData.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
