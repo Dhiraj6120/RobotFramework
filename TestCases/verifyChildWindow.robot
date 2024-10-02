@@ -2,8 +2,7 @@
 Documentation    Thia Test Case is to validate the new window in Browser
 Library    SeleniumLibrary
 Library    Collections
-Resource    common.robot
-Resource    testData.robot
+Resource    ../Util/common.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
 

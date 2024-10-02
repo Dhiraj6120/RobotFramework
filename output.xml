@@ -1,100 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2024-10-02T19:44:16.546550" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2024-10-02T21:16:11.685265" rpa="false" schemaversion="5">
 <suite id="s1" name="RobotFramework" source="/Users/dhiraj/PycharmProjects/RobotFramework">
-<suite id="s1-s1" name="Tests" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests">
-<suite id="s1-s1-s1" name="verifyRegistrationPageTestUsingTheCustomKeywords" source="/Users/dhiraj/PycharmProjects/RobotFramework/Tests/verifyRegistrationPageTestUsingTheCustomKeywords.robot">
-<test id="s1-s1-s1-t1" name="Validate Successfully user Login" line="14">
-<kw name="Open Browser and Go to Website" owner="common" type="SETUP">
+<suite id="s1-s1" name="TestCases" source="/Users/dhiraj/PycharmProjects/RobotFramework/TestCases">
+<suite id="s1-s1-s1" name="registrationWithParameterize" source="/Users/dhiraj/PycharmProjects/RobotFramework/TestCases/registrationWithParameterize.robot">
+<test id="s1-s1-s1-t1" name="Login Test" line="21">
+<kw name="Validate Successfully user Login">
+<kw name="Open Browser and Go to Website" owner="common">
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2024-10-02T19:44:16.862953" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2024-10-02T21:16:11.993177" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>/Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-10-02T19:44:16.862699" elapsed="3.002498"/>
+<status status="PASS" start="2024-10-02T21:16:11.992922" elapsed="1.965078"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-10-02T19:44:19.868023" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<msg time="2024-10-02T21:16:13.960650" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
 <arg>${DemoWebshopUrl}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-10-02T19:44:19.866813" elapsed="1.820625"/>
+<status status="PASS" start="2024-10-02T21:16:13.959744" elapsed="5.800279"/>
 </kw>
-<status status="PASS" start="2024-10-02T19:44:16.861787" elapsed="4.830745"/>
-</kw>
-<kw name="Generate Random User" owner="CustomKeywords">
-<status status="PASS" start="2024-10-02T19:44:21.693375" elapsed="0.005141"/>
+<status status="PASS" start="2024-10-02T21:16:11.991986" elapsed="7.768358"/>
 </kw>
 <kw name="Tap on register button" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${registerLink}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-02T19:44:21.713713" elapsed="3.588478"/>
+<status status="PASS" start="2024-10-02T21:16:19.761468" elapsed="0.048748"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-02T19:44:25.303058" level="INFO">Clicking element 'class:ico-register'.</msg>
+<msg time="2024-10-02T21:16:19.810814" level="INFO">Clicking element 'class:ico-register'.</msg>
 <arg>${registerLink}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-02T19:44:25.302568" elapsed="0.594189"/>
+<status status="PASS" start="2024-10-02T21:16:19.810470" elapsed="0.595121"/>
 </kw>
-<status status="PASS" start="2024-10-02T19:44:21.712627" elapsed="4.184293"/>
+<status status="PASS" start="2024-10-02T21:16:19.760820" elapsed="0.645062"/>
 </kw>
-<kw name="Fill The Registration Form With Valid Creds Using CustomKeywords" owner="CustomKeywords">
-<msg time="2024-10-02T19:44:25.927762" level="INFO">Clicking element 'id:gender-male'.</msg>
-<msg time="2024-10-02T19:44:25.980536" level="INFO">Typing text 'asdad' into text field 'id:FirstName'.</msg>
-<msg time="2024-10-02T19:44:26.228010" level="INFO">Typing text 'wqeqe' into text field 'id:LastName'.</msg>
-<msg time="2024-10-02T19:44:26.311072" level="INFO">Typing text 'qweq@yopmail.com' into text field 'id:Email'.</msg>
-<msg time="2024-10-02T19:44:26.394909" level="INFO">Typing password into text field 'id:Password'.</msg>
-<msg time="2024-10-02T19:44:26.429633" level="INFO">Temporally setting log level to: NONE</msg>
-<msg time="2024-10-02T19:44:26.488194" level="INFO">Typing password into text field 'id:ConfirmPassword'.</msg>
-<msg time="2024-10-02T19:44:26.524076" level="INFO">Temporally setting log level to: NONE</msg>
-<msg time="2024-10-02T19:44:26.567996" level="INFO">Clicking element 'xpath://*[@value="Register"]'.</msg>
-<arg>asdad</arg>
-<arg>wqeqe</arg>
-<arg>qweq@yopmail.com</arg>
-<arg>asdasdasd</arg>
-<status status="PASS" start="2024-10-02T19:44:25.897223" elapsed="1.840983"/>
-</kw>
-<kw name="Verify user is successfully register to Website">
+<kw name="Fill the Registration Form with valid Creds">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${registrationCompletionText}</arg>
+<arg>id:gender-male</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-02T19:44:27.739420" elapsed="0.022436"/>
+<status status="PASS" start="2024-10-02T21:16:20.407346" elapsed="0.025671"/>
 </kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-02T19:44:27.786111" level="INFO">${actualSuccessMessage} = Your registration completed</msg>
-<var>${actualSuccessMessage}</var>
-<arg>${registrationCompletionText}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-02T19:44:27.762111" elapsed="0.024056"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${actualSuccessMessage}</arg>
-<arg>Your registration completed</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-10-02T19:44:27.786393" elapsed="0.000319"/>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${maleGenderCheckbox}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-10-02T21:16:20.433254" elapsed="0.028199"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-02T19:44:27.787145" level="INFO">Clicking element 'css:.register-continue-button'.</msg>
-<arg>${ContinueButtonAfterRegister}</arg>
+<msg time="2024-10-02T21:16:20.462045" level="INFO">Clicking element 'id:gender-male'.</msg>
+<arg>${maleGenderCheckbox}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-02T19:44:27.786903" elapsed="0.677375"/>
+<status status="PASS" start="2024-10-02T21:16:20.461690" elapsed="0.056709"/>
 </kw>
-<status status="PASS" start="2024-10-02T19:44:27.738908" elapsed="0.725527"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:20.519094" level="INFO">Typing text 'John' into text field 'id:FirstName'.</msg>
+<arg>${firstNameTextbox}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:20.518698" elapsed="0.258322"/>
 </kw>
-<kw name="Close Existing Browser" owner="common" type="TEARDOWN">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:20.777590" level="INFO">Typing text 'Doe' into text field 'id:LastName'.</msg>
+<arg>${lastNameTextbox}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:20.777245" elapsed="0.092308"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:20.870259" level="INFO">Typing text 'john.doe@example.com' into text field 'id:Email'.</msg>
+<arg>${emailTextbox}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:20.869785" elapsed="0.100528"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:20.971049" level="INFO">Typing password into text field 'id:Password'.</msg>
+<msg time="2024-10-02T21:16:21.010793" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordTextbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:20.970546" elapsed="0.107927"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:21.079002" level="INFO">Typing password into text field 'id:ConfirmPassword'.</msg>
+<msg time="2024-10-02T21:16:21.118449" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${confirmPasswordTextbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:21.078696" elapsed="0.177735"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:21.256939" level="INFO">Clicking element 'xpath://*[@value="Register"]'.</msg>
+<arg>${registerFormRegisterButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:21.256658" elapsed="1.029094"/>
+</kw>
+<arg>${new_firstname}</arg>
+<arg>${new_lastname}</arg>
+<arg>${new_Email}</arg>
+<arg>${new_password}</arg>
+<status status="PASS" start="2024-10-02T21:16:20.406402" elapsed="1.879595"/>
+</kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-02T19:44:28.465437" elapsed="0.181373"/>
+<status status="PASS" start="2024-10-02T21:16:22.286233" elapsed="0.204130"/>
 </kw>
-<status status="PASS" start="2024-10-02T19:44:28.464985" elapsed="0.182035"/>
+<arg>John</arg>
+<arg>Doe</arg>
+<arg>john.doe@example.com</arg>
+<arg>Password123</arg>
+<status status="PASS" start="2024-10-02T21:16:11.991313" elapsed="10.499347"/>
 </kw>
-<status status="PASS" start="2024-10-02T19:44:16.860902" elapsed="11.786337"/>
+<kw name="Validate Successfully user Login">
+<kw name="Open Browser and Go to Website" owner="common">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:22.492463" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>/Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-10-02T21:16:22.492250" elapsed="1.876176"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:24.369796" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<arg>${DemoWebshopUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-02T21:16:24.369210" elapsed="5.185631"/>
+</kw>
+<status status="PASS" start="2024-10-02T21:16:22.491864" elapsed="7.063333"/>
+</kw>
+<kw name="Tap on register button" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${registerLink}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-02T21:16:29.556262" elapsed="0.027607"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:29.584594" level="INFO">Clicking element 'class:ico-register'.</msg>
+<arg>${registerLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:29.584256" elapsed="0.574614"/>
+</kw>
+<status status="PASS" start="2024-10-02T21:16:29.555605" elapsed="0.603415"/>
+</kw>
+<kw name="Fill the Registration Form with valid Creds">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:gender-male</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.160238" elapsed="0.025165"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${maleGenderCheckbox}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.185630" elapsed="0.025873"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.212002" level="INFO">Clicking element 'id:gender-male'.</msg>
+<arg>${maleGenderCheckbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.211727" elapsed="0.054791"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.267099" level="INFO">Typing text 'Jane' into text field 'id:FirstName'.</msg>
+<arg>${firstNameTextbox}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.266766" elapsed="0.226832"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.494142" level="INFO">Typing text 'Smith' into text field 'id:LastName'.</msg>
+<arg>${lastNameTextbox}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.493824" elapsed="0.090010"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.584438" level="INFO">Typing text 'jane.smith@example.com' into text field 'id:Email'.</msg>
+<arg>${emailTextbox}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.584108" elapsed="0.092895"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.677564" level="INFO">Typing password into text field 'id:Password'.</msg>
+<msg time="2024-10-02T21:16:30.714969" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordTextbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.677240" elapsed="0.097967"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.775722" level="INFO">Typing password into text field 'id:ConfirmPassword'.</msg>
+<msg time="2024-10-02T21:16:30.812706" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${confirmPasswordTextbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.775425" elapsed="0.086923"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:30.862843" level="INFO">Clicking element 'xpath://*[@value="Register"]'.</msg>
+<arg>${registerFormRegisterButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:30.862577" elapsed="1.024597"/>
+</kw>
+<arg>${new_firstname}</arg>
+<arg>${new_lastname}</arg>
+<arg>${new_Email}</arg>
+<arg>${new_password}</arg>
+<status status="PASS" start="2024-10-02T21:16:30.159349" elapsed="1.728163"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-02T21:16:31.887829" elapsed="0.199272"/>
+</kw>
+<arg>Jane</arg>
+<arg>Smith</arg>
+<arg>jane.smith@example.com</arg>
+<arg>Password456</arg>
+<status status="PASS" start="2024-10-02T21:16:22.491268" elapsed="9.596146"/>
+</kw>
+<kw name="Validate Successfully user Login">
+<kw name="Open Browser and Go to Website" owner="common">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:32.089723" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>/Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-10-02T21:16:32.089369" elapsed="1.802187"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:33.893126" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<arg>${DemoWebshopUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-02T21:16:33.892457" elapsed="8.997197"/>
+</kw>
+<status status="PASS" start="2024-10-02T21:16:32.088902" elapsed="10.800952"/>
+</kw>
+<kw name="Tap on register button" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${registerLink}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-02T21:16:42.890557" elapsed="0.030602"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:42.921772" level="INFO">Clicking element 'class:ico-register'.</msg>
+<arg>${registerLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:42.921405" elapsed="0.613757"/>
+</kw>
+<status status="PASS" start="2024-10-02T21:16:42.890165" elapsed="0.645417"/>
+</kw>
+<kw name="Fill the Registration Form with valid Creds">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:gender-male</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-02T21:16:43.537022" elapsed="0.024499"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${maleGenderCheckbox}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-10-02T21:16:43.561746" elapsed="0.027234"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:43.589485" level="INFO">Clicking element 'id:gender-male'.</msg>
+<arg>${maleGenderCheckbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:43.589203" elapsed="0.055723"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:43.645600" level="INFO">Typing text 'Alice' into text field 'id:FirstName'.</msg>
+<arg>${firstNameTextbox}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:43.645157" elapsed="0.227848"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:43.873566" level="INFO">Typing text 'Johnson' into text field 'id:LastName'.</msg>
+<arg>${lastNameTextbox}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:43.873250" elapsed="0.087853"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:43.961651" level="INFO">Typing text 'alice.johnson@example.com' into text field 'id:Email'.</msg>
+<arg>${emailTextbox}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:43.961325" elapsed="0.096439"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:44.058309" level="INFO">Typing password into text field 'id:Password'.</msg>
+<msg time="2024-10-02T21:16:44.095715" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordTextbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:44.057985" elapsed="0.098336"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:44.156839" level="INFO">Typing password into text field 'id:ConfirmPassword'.</msg>
+<msg time="2024-10-02T21:16:44.194175" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${confirmPasswordTextbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:44.156541" elapsed="0.086638"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-02T21:16:44.243741" level="INFO">Clicking element 'xpath://*[@value="Register"]'.</msg>
+<arg>${registerFormRegisterButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-02T21:16:44.243402" elapsed="0.900008"/>
+</kw>
+<arg>${new_firstname}</arg>
+<arg>${new_lastname}</arg>
+<arg>${new_Email}</arg>
+<arg>${new_password}</arg>
+<status status="PASS" start="2024-10-02T21:16:43.536050" elapsed="1.607516"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-02T21:16:45.144060" elapsed="0.184108"/>
+</kw>
+<arg>Alice</arg>
+<arg>Johnson</arg>
+<arg>alice.johnson@example.com</arg>
+<arg>Password78</arg>
+<status status="PASS" start="2024-10-02T21:16:32.087939" elapsed="13.240489"/>
+</kw>
+<status status="PASS" start="2024-10-02T21:16:11.990497" elapsed="33.338562"/>
 </test>
 <doc>To Validate the login form</doc>
-<status status="PASS" start="2024-10-02T19:44:16.601556" elapsed="12.046869"/>
+<status status="PASS" start="2024-10-02T21:16:11.745334" elapsed="33.584846"/>
 </suite>
-<status status="PASS" start="2024-10-02T19:44:16.600251" elapsed="12.050116"/>
+<status status="PASS" start="2024-10-02T21:16:11.743141" elapsed="33.588336"/>
 </suite>
-<status status="PASS" start="2024-10-02T19:44:16.548640" elapsed="12.102825"/>
+<status status="PASS" start="2024-10-02T21:16:11.687986" elapsed="33.644255"/>
 </suite>
 <statistics>
 <total>
@@ -104,8 +342,8 @@
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="RobotFramework">RobotFramework</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">RobotFramework.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="verifyRegistrationPageTestUsingTheCustomKeywords">RobotFramework.Tests.verifyRegistrationPageTestUsingTheCustomKeywords</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestCases">RobotFramework.TestCases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="registrationWithParameterize">RobotFramework.TestCases.registrationWithParameterize</stat>
 </suite>
 </statistics>
 <errors>

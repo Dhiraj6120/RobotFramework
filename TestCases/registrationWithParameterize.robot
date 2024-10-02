@@ -1,12 +1,9 @@
 *** Settings ***
 Documentation    To Validate the login form
 Library    SeleniumLibrary
-Resource    common.robot
-Resource    testData.robot
-Resource    registrationPage.robot
-#Test Setup     Open Browser and Go to Website
-#Test Teardown    Close Existing Browser
-#Test Teardown    Validate Successfully user Login
+Resource    ../Util/common.robot
+Resource    ../Pages/registrationPage.robot
+Test Template    Validate Successfully user Login
 
 *** Variables ***
 ${registerLink}    class:ico-register
@@ -48,11 +45,4 @@ Fill the Registration Form with valid Creds
     Input Password                     ${passwordTextbox}           ${password}
     Input Password                     ${confirmPasswordTextbox}    ${password}
     Click Element                      ${registerFormRegisterButton}
-#    Wait Until Element Is Visible      ${ContinueButtonAfterRegister}
-
-Verify user is successfully register to Website
-    Wait Until Element Is Visible    ${registrationCompletionText}
-    ${actualSuccessMessage}=    Get Text    ${registrationCompletionText}
-    Should Be Equal As Strings    ${actualSuccessMessage}    Your registration completed
-    Click Element                      ${ContinueButtonAfterRegister}
 
