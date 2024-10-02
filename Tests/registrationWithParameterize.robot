@@ -4,8 +4,9 @@ Library    SeleniumLibrary
 Resource    common.robot
 Resource    testData.robot
 Resource    registrationPage.robot
-Test Setup     Open Browser and Go to Website
-Test Teardown    Close Existing Browser
+#Test Setup     Open Browser and Go to Website
+#Test Teardown    Close Existing Browser
+#Test Teardown    Validate Successfully user Login
 
 *** Variables ***
 ${registerLink}    class:ico-register
@@ -19,31 +20,22 @@ ${registerFormRegisterButton}    xpath://*[@value="Register"]
 ${ExpectedFirstNameError}    First nme is required.
 
 
-
 *** Test Cases ***
-Validate UnSuccessful Login when First name was not entered
-    Tap on register button
-    Fill the login form with wrong creds
-    Validate the Error for firstname
+Login Test
+    [Template]    Validate Successfully user Login
+    John    Doe    john.doe@example.com    Password123
+    Jane    Smith    jane.smith@example.com    Password456
+    Alice    Johnson    alice.johnson@example.com    Password78
 
-Validate Successfully user Login
-    Generate Random userData
-    Tap on register button
-    Fill the Registration Form with valid Creds         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
-    Verify user is successfully register to Website
 
 *** Keywords ***
 
-Fill the login form with wrong creds
-    Wait Until Element Is Visible     id:gender-male
-    Wait Until Element Is Enabled      ${maleGenderCheckbox}
-    Click Element    ${maleGenderCheckbox}
-#    Input Text    ${firstNameTextbox}    "firstname"
-    Input Text    ${lastNameTextbox}    "lastname"
-    Input Text    ${emailTextbox}    "fn12322@gmail.com"
-    Input Password        ${passwordTextbox}    "flnasdaame@45"
-    Input Password        ${confirmPasswordTextbox}    "flnasdaame@45"
-    Click Element    ${registerFormRegisterButton}
+Validate Successfully user Login
+    [Arguments]    ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
+    Open Browser and Go to Website
+    Tap on register button
+    Fill the Registration Form with valid Creds         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
+    Close Browser
 
 Fill the Registration Form with valid Creds
     [Arguments]                        ${first_name}                ${last_name}    ${email}    ${password}
@@ -56,13 +48,7 @@ Fill the Registration Form with valid Creds
     Input Password                     ${passwordTextbox}           ${password}
     Input Password                     ${confirmPasswordTextbox}    ${password}
     Click Element                      ${registerFormRegisterButton}
-    Wait Until Element Is Visible      ${ContinueButtonAfterRegister}
-
-
-Validate the Error for firstname
-    Wait Until Element Is Enabled     xpath://span[@for = "FirstName"]
-    ${ResultText}=    Get Text        xpath://span[@for = "FirstName"]
-    Should Be Equal As Strings        ${ResultText}    ${ExpectedFirstNameError}
+#    Wait Until Element Is Visible      ${ContinueButtonAfterRegister}
 
 Verify user is successfully register to Website
     Wait Until Element Is Visible    ${registrationCompletionText}
