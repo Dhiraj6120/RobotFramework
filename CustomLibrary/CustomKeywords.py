@@ -45,3 +45,12 @@ class CustomKeywords:
         self.firstname = self.user_prefix + ''.join(random.choices(string.ascii_letters + string.digits, k=5))
         self.user_email = self.lastname + self.firstname + self.email_extension
         self.password = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+
+    def add_product_to_cart(self, product_to_add):
+        products_ele_list = self.selLib.get_webelements("css:.product-title a")
+        i = 1
+        for product_Ele in products_ele_list:
+            if product_Ele.text ==  product_to_add:
+                break
+            i += 1
+        self.selLib.click_button("xpath: (//*[@ value='Add to cart'])["+str(i)+"]")
