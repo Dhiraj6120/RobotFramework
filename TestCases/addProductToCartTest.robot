@@ -2,8 +2,8 @@
 Documentation    To Validate the login form
 Library    SeleniumLibrary
 Library    Collections
-Resource    common.robot
-Resource    testData.robot
+Resource    ../Util/common.robot
+Resource    ../TestData/testData.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
 
@@ -13,7 +13,7 @@ Verify user is able to add product to Cart
     Tap on register button
     Fill the Registration Form with valid Creds         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
     Validate the Feature products on Home Page
-    Add Product to cart    Build your own cheap computer
+    Add Product to cart    14.1-inch Laptop
     
 
 *** Keywords ***

@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation    To Validate the login form
 Library    SeleniumLibrary
-Resource    common.robot
-Resource    testData.robot
-Resource    registrationPage.robot
+Resource    ../Util/common.robot
+Resource    ../TestData/testData.robot
+Resource    ../Pages/registrationPage.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
 
@@ -16,8 +16,7 @@ ${emailTextbox}    id:Email
 ${passwordTextbox}    id:Password
 ${confirmPasswordTextbox}    id:ConfirmPassword
 ${registerFormRegisterButton}    xpath://*[@value="Register"]
-${ExpectedFirstNameError}    First nme is required.
-
+${ExpectedFirstNameError}    First name is required.
 
 
 *** Test Cases ***
@@ -38,7 +37,6 @@ Fill the login form with wrong creds
     Wait Until Element Is Visible     id:gender-male
     Wait Until Element Is Enabled      ${maleGenderCheckbox}
     Click Element    ${maleGenderCheckbox}
-#    Input Text    ${firstNameTextbox}    "firstname"
     Input Text    ${lastNameTextbox}    "lastname"
     Input Text    ${emailTextbox}    "fn12322@gmail.com"
     Input Password        ${passwordTextbox}    "flnasdaame@45"

@@ -2,8 +2,8 @@
 Documentation    To Validate the login form
 Library    SeleniumLibrary
 Library    ../CustomLibrary/CustomKeywords.py
-Resource    common.robot
-Resource    testData.robot
+Resource    ../Tests/common.robot
+#Resource    testData.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
 

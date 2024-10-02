@@ -2,9 +2,8 @@
 Documentation    This test is to verify the dropdown box
 Library    SeleniumLibrary
 Library    Collections
-Resource    common.robot
-Resource    testData.robot
-Resource    homePage.robot
+Resource    ../Util/common.robot
+Resource    ../TestData/testData.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
 
