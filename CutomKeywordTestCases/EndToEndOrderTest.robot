@@ -3,8 +3,11 @@ Documentation    To Validate the login form
 Library    SeleniumLibrary
 Library    Collections
 Library    ../CustomLibrary/CustomKeywords.py
+Library    ../CustomLibrary/GenericKeywords.py
 Resource    ../Util/common.robot
 Resource    ../Pages/homePage.robot
+Resource    ../Pages/cart.robot
+Resource    ../Pages/checkoutScreen.robot
 Test Setup     Open Browser and Go to Website
 Test Teardown    Close Existing Browser
 
@@ -15,8 +18,29 @@ Verify that user is able to complete the Order
     Verify user is successfully register to Website
     Validate the Feature products on Home Page
     Add Product To Cart    14.1-inch Laptop
-    Click Element    ${shoppingCartButton}
-   
+    Click    ${shoppingCartButton}
+    Click    ${termsAndConditionCheckBoxOnCartScreen}
+    Click    ${checkoutButtonOnCartScreen}
+    Input Text    ${companyFieldOnCheckoutScreen}    Pycharm
+    Select From List By Label    ${countryDropdownOnCheckoutScreen}    United States
+    Sleep    5
+    Select From List By Label    ${stateDropdownOnCheckoutScreen}    Alaska
+    Input Text    ${cityFieldOnCheckoutScreen}    Chicago
+    Input Text    ${addressOneFieldOnCheckoutScreen}    Alexandra palace Way
+    Input Text    ${zipCodeFieldOnCheckoutScreen}    50001
+    Input Text    ${phoneNumberFieldOnCheckoutScreen}    +1 3123123
+    Click    ${continueButtonForBillingAddress}
+    Click    ${continueButtonForShippingAddress}
+    Click    ${nextDayAirShippingMethod}
+    Click    ${continueButtonForShippingMethod}
+    Click    ${creditCardPaymentMethod}
+    Click    ${continueButtonForPaymentMethod}
+    Click    ${continueButtonForPaymentInfo}
+    Wait Until Element Is Visible        ${confirmOrderButtonConfirmOrderSection}
+    Scroll Element Into View    ${confirmOrderButtonConfirmOrderSection}
+    Click    ${confirmOrderButtonConfirmOrderSection}
+    Sleep    5
+
 
 *** Keywords ***
 Verify user is successfully register to Website

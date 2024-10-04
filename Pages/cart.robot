@@ -2,6 +2,5 @@
 Documentation    This page is for locators of Cart screen
 
 *** Variables ***
-${termsAndConditionCheckBoxOnCartScreen}    id:termsofservice
-${checkoutButtonOnCartScreen}    id:checkout
-${checkoutButtonOnCartScreen}    xpath://select[@class='valid']
+${termsAndConditionCheckBoxOnCartScreen}    xpath://input[@id='termsofservice']
+${checkoutButtonOnCartScreen}    xpath://button[@id='checkout']
