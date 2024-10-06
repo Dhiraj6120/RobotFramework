@@ -10,6 +10,7 @@ Test Teardown    Close Existing Browser
 *** Test Cases ***
 
 Verify user is able to add product to Cart
+    [Tags]    REGRESSION
     Generate Random userData
     Tap on register button
     Fill the Registration Form with valid Creds         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}

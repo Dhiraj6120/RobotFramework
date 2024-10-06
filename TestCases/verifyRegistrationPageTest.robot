@@ -21,6 +21,7 @@ ${ExpectedFirstNameError}    First name is required.
 
 *** Test Cases ***
 Validate UnSuccessful Login when First name was not entered
+    [Tags]    REGRESSION
     Tap on register button
     Fill the login form with wrong creds
     Validate the Error for firstname
