@@ -26,6 +26,7 @@ Validate UnSuccessful Login when First name was not entered
     Validate the Error for firstname
 
 Validate Successfully user Login
+    [Tags]    SMOKE
     Generate Random userData
     Tap on register button
     Fill the Registration Form with valid Creds         ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}

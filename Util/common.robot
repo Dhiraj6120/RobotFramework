@@ -5,10 +5,12 @@ Resource         ../Pages/registrationPage.robot
 
 *** Variables ***
 ${DemoWebshopUrl}    https://demowebshop.tricentis.com/
+${Browser}           Safari
 
 *** Keywords ***
 Open Browser and Go to Website
-    Create Webdriver    Chrome    /Users/dhiraj/Downloads/chromedriver-mac-x64/chromedriver
+    Create Webdriver    ${Browser}    BrowserDrivers/${Browser}
+    Maximize Browser Window
     Go To    ${DemoWebshopUrl}
 
 Close Existing Browser
