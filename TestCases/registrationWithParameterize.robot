@@ -2,7 +2,6 @@
 Documentation    To Validate the login form
 Library    SeleniumLibrary
 Resource    ../Util/common.robot
-Resource    ../Pages/registrationPage.robot
 Test Template    Validate Successfully user Login
 
 *** Variables ***
@@ -28,6 +27,7 @@ Login Test
 *** Keywords ***
 
 Validate Successfully user Login
+    [Tags]    SMOKE
     [Arguments]    ${new_firstname}    ${new_lastname}    ${new_Email}    ${new_password}
     Open Browser and Go to Website
     Tap on register button
