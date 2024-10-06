@@ -8,6 +8,7 @@ Test Teardown    Close Existing Browser
 
 *** Test Cases ***
 Verify the New Window in Browser
+    [Tags]    SANITY
     Verify and Tap the Youtube Link at button of the Page
     Verify that user is switch to child window
     Get Name of youtube channel

@@ -13,6 +13,7 @@ Test Teardown    Close Existing Browser
 
 *** Test Cases ***
 Verify that user is able to complete the Order
+    [Tags]    SMOKE
     Tap on register button
     Fill the Registration Form with valid Creds Using CustomKeywords
     Verify user is successfully register to Website

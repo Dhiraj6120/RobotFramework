@@ -9,6 +9,7 @@ Test Teardown    Close Existing Browser
 
 *** Test Cases ***
 Verify user is able to add product to Cart
+    [Tags]    SANITY
     Tap on register button
     Fill the Registration Form with valid Creds Using CustomKeywords
     Verify user is successfully register to Website
